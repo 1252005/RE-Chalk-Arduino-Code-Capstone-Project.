@@ -32,13 +32,15 @@ void loop() {
    
   Serial.print(" - White = ");
   Serial.println(whiteValue);
-if (whiteValue >= 146) { pinMode(13,LOW);
+if (whiteValue == 146) { pinMode(13,LOW);
   Serial.println("Add less gypsum");}
-  else if (whiteValue >= 140 ){  pinMode(13,LOW);
+  else if (whiteValue == 147) { pinMode(13,LOW);
+  Serial.println("Add less gypsum");}
+ if (whiteValue >= 140 && whiteValue <= 152 ){  pinMode(13,LOW);
   Serial.println("Add more coal");}
-else if (whiteValue <= 99){ pinMode(13,LOW);
+if (whiteValue <= 99){ pinMode(13,LOW);
    Serial.println("Add more gypsum");}
-   else if (whiteValue >= 152){ pinMode(13,LOW);
+ else if (whiteValue > 152){ pinMode(13,LOW);
    Serial.println("Increase gypsum and coal concentration");}
   delay(5000);
 }
